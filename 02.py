@@ -1,3 +1,6 @@
+# Aim
+# Write a program in Python that generates a random password with a specified length.
+
 import random
 import string
 

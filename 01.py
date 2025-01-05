@@ -1,3 +1,6 @@
+# Aim
+# Create a program in Python that calculates the area of a circle, given its radius.
+
 import random
 import math
 
