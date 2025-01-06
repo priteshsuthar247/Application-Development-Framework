@@ -4,7 +4,7 @@
 import random
 import string
 
-passwordLength = random.randrange(0,99,1)
+passwordLength = random.randrange(0,10,1)
 charList = string.ascii_letters + string.digits + string.punctuation
 password = ""
 for i in range(passwordLength):
