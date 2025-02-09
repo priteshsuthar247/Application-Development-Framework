@@ -38,7 +38,7 @@ def getOperands(expression: str):
 
     return firstOperand, operator, secondOperand
 
-def claculate(firstOperand, operator, secondOperand):
+def calculate(firstOperand, operator, secondOperand):
 
     if (firstOperand == "" or operator == "" or secondOperand == ""): 
         print("Please correct the expression")
@@ -59,4 +59,4 @@ def claculate(firstOperand, operator, secondOperand):
 expression = generateExpression()
 print(expression)
 firstOperand, operator, secondOperand = getOperands(expression)
-print(claculate(firstOperand, operator, secondOperand))
+print(calculate(firstOperand, operator, secondOperand))
