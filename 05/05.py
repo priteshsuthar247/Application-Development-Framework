@@ -11,11 +11,26 @@ connection = mysql.connector.connect(
             database='testdb'
         )
 cursor = connection.cursor()
-query = "SELECT * FROM STORE"
-cursor.execute(query)
-results = cursor.fetchall()
-for row in results:
-    print(row)
-cursor.close()
+query1 = "SELECT * FROM STORE;"
+cursor.execute(query1)
+results1 = cursor.fetchall()
 
-file = open("dataset.csv",'w+')
+
+   
+
+query2 = "desc STORE;"
+cursor.execute(query2)
+results2 = cursor.fetchall()
+header=[]
+for row in results2:
+    header.append(row[0])
+
+print(header)
+file = open("05\\dataset.csv",'w+',newline='')
+
+import csv
+
+csv_writer = csv.writer(file)
+
+csv_writer.writerow(header)
+csv_writer.writerows(results1)
