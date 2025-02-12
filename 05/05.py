@@ -18,4 +18,4 @@ for row in results:
     print(row)
 cursor.close()
 
-file = open("")
+file = open("dataset.csv",'w+')
