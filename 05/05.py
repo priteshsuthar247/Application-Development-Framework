@@ -26,7 +26,7 @@ for row in results2:
     header.append(row[0])
 
 print(header)
-file = open("//home//pritesh-suthar//Personal//College//6th Semester//ADF/Practicals//05//dataset.csv",'w+',newline='')
+file = open("05//dataset.csv",'w+',newline='')
 
 import csv
 
