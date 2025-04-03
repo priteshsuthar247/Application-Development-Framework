@@ -1,0 +1,18 @@
+P_ID,P_NAME,PRICE_$,P_TYPE
+1,Intel Core i9-14900K,589,CPU
+2,AMD Ryzen 9 7950X3D,699,CPU
+3,Intel Core i7-14700K,409,CPU
+4,AMD Ryzen 7 7800X3D,449,CPU
+5,MSI MEG X670E GODLIKE,1299,Motherboard
+6,ASUS ROG Crosshair X670E Hero,699,Motherboard
+7,Gigabyte Z790 AORUS Master,499,Motherboard
+8,ASRock B650E Taichi,449,Motherboard
+9,Samsung 990 Pro 2TB,179,SSD
+10,WD Black SN850X 2TB,159,SSD
+11,Crucial T700 2TB,299,SSD
+12,ADATA XPG Gammix S70 Blade 2TB,129,SSD
+13,Corsair iCUE H150i Elite Capellix XT,189,AIO Cooler
+14,NZXT Kraken Z73,249,AIO Cooler
+15,ASUS ROG Ryujin III 360,269,AIO Cooler
+16,DeepCool LS720,129,AIO Cooler
+17,EK-AIO Elite 360 D-RGB,219,AIO Cooler
