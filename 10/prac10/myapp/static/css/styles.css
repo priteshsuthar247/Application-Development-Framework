@@ -1,0 +1,11 @@
+body {
+    font-family: Consolas, sans-serif;
+    text-align: center;
+    margin-top: 20vw;
+    background-color: #1f1f1f;
+}
+
+p {
+    font-size: 10vw;
+    color: #ffffff;
+}
