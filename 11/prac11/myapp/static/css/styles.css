@@ -1,0 +1,182 @@
+/* General Styles */
+body {
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+    font-family: 'Consolas', 'Courier New', monospace;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+/* Sidebar Navigation */
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 250px;
+    background-color: #252526;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    box-shadow: 2px 0px 8px rgba(0, 0, 0, 0.4);
+}
+
+.sidebar h2 {
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.sidebar a {
+    color: #d4d4d4;
+    text-decoration: none;
+    padding: 10px;
+    background-color: #333;
+    border-radius: 4px;
+    font-size: 14px;
+    text-align: center;
+    transition: background 0.3s;
+}
+
+.sidebar a:hover {
+    background-color: #444;
+}
+
+.sidebar .menu {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Main Container */
+.main-container, .container {
+    margin-left: 280px; /* Spacing from sidebar */
+    padding: 20px;
+    width: calc(100% - 280px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Header */
+h1 {
+    color: #ffffff;
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    /* background-color: #252526; */
+    padding: 20px;
+    border-radius: 8px;
+    /* box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5); */
+    width: 100%;
+    max-width: 500px;
+    margin-left: auto; /* Centers it horizontally */
+    margin-right: auto; /* Centers it horizontally */
+}
+
+/* Labels */
+form label {
+    color: #ffffff;
+    font-size: 16px;
+}
+
+/* Input and Textarea */
+form input, form textarea {
+    width: 100%;
+    background-color: #333;
+    color: #ffffff;
+    border: 1px solid #3c3c3c;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+/* Buttons */
+form button {
+    background-color: #007acc;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+form button:hover {
+    background-color: #3399ff;
+}
+
+/* Notes List */
+.note-container {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.note-card {
+    background-color: #333;
+    padding: 14px;
+    border-radius: 6px;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
+    color: #d4d4d4;
+    font-size: 14px;
+    line-height: 1.4;
+    border-left: 4px solid #007acc;
+}
+
+.edit-btn {
+    background-color: aqua; /* Aqua color */
+    color: black; /* Ensure good contrast */
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none; /* Remove default hyperlink styling */
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: bold;
+    display: inline-block; /* Ensures button-like behavior */
+    text-align: center;
+}
+
+.edit-btn:hover {
+    background-color: #00cccc; /* Slightly darker aqua on hover */
+}
+
+/* Remove default link styling */
+.edit-btn:visited,
+.edit-btn:active,
+.edit-btn:focus {
+    color: black;
+    text-decoration: none;
+}
+
+
+.delete-btn {
+    background-color: #f44336; /* Red */
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    background-color: #d32f2f;
+}

@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes App</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>Notes</h2>
+        <a href="{% url 'add_note' %}">➕ Add Note</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <h1>My Notes</h1>
+        <div class="note-container">
+            {% for note in notes %}
+            <div class="note-card">
+                <h3>{{ note.title }}</h3>
+                <p>{{ note.content }}</p>
+                <a href="{% url 'edit_note' note.id %}" class="edit-btn">✏️ Edit</a>
+                <a href="{% url 'delete_note' note.id %}" class="delete-btn">🗑 Delete</a>
+            </div>
+            {% empty %}
+            <p>No notes found. Add some!</p>
+            {% endfor %}
+        </div>
+    </div>
+
+</body>
+
+</html>

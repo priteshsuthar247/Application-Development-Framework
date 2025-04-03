@@ -1,0 +1,18 @@
+{% extends 'myapp/base.html' %}
+
+{% block content %}
+<div class="main-container">
+    <h1>Add a New Note</h1>
+    <form method="post">
+        {% csrf_token %}
+        
+        <label for="title">Title:</label>
+        <input type="text" name="title" id="title" required>
+
+        <label for="content">Content:</label>
+        <textarea name="content" id="content" rows="10" required></textarea>
+
+        <button type="submit">💾 Save Note</button>
+    </form>
+</div>
+{% endblock %}

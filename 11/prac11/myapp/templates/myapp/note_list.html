@@ -1,0 +1,16 @@
+{% extends 'myapp/base.html' %}
+
+{% block content %}
+<h1>All Notes</h1>
+
+<div class="note-container">
+    {% for note in notes %}
+    <div class="note-card">
+        <h3>{{ note.title }}</h3>
+        <p>{{ note.content|truncatewords:20 }}</p>
+        <a href="{% url 'edit_note' note.id %}" class="action-btn">✏ Edit</a>
+        <a href="{% url 'delete_note' note.id %}" class="action-btn delete-btn">🗑 Delete</a>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
