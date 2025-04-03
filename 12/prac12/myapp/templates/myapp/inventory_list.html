@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 10px;
+        }
+        h1 {
+            text-align: center;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        input[type="text"], input[type="number"] {
+            padding: 5px;
+            margin: 5px;
+        }
+        button {
+            padding: 5px 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .low-stock {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Inventory Management</h1>
+
+    <!-- Search Bar -->
+    <form method="GET">
+        <input type="text" name="q" placeholder="Search items..." value="{{ request.GET.q }}">
+        <button type="submit">Search</button>
+    </form>
+
+    <!-- Add Item Button -->
+    <a href="{% url 'add_item' %}">➕ Add Item</a>
+
+    <!-- Inventory List -->
+    <ul>
+        {% for item in items %}
+            <li class="{% if item.quantity < 5 %}low-stock{% endif %}">
+                {{ item.name }} ({{ item.quantity }}) - ${{ item.price }}
+                <a href="{% url 'edit_item' item.id %}">✏ Edit</a>
+                <a href="{% url 'delete_item' item.id %}">🗑 Delete</a>
+            </li>
+        {% empty %}
+            <li>No items found.</li>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>
