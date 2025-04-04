@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Relay Control</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .relay-btn {
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            margin: 20px;
+        }
+        .on {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .off {
+            background-color: #f44336;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Relay Control</h1>
+    <p>Current State: <span id="state-display">{{ current_state }}</span></p>
+    
+    <button id="toggle-btn" class="relay-btn {% if current_state == 'on' %}on{% else %}off{% endif %}">
+        Turn {% if current_state == 'on' %}OFF{% else %}ON{% endif %}
+    </button>
+
+    <script>
+        $(document).ready(function() {
+            $('#toggle-btn').click(function() {
+                $.post(window.location.href, {}, function(data) {
+                    if(data.status === 'success') {
+                        // Update button and display
+                        $('#state-display').text(data.new_state);
+                        $('#toggle-btn')
+                            .toggleClass('on off')
+                            .text(data.new_state === 'on' ? 'Turn OFF' : 'Turn ON');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
